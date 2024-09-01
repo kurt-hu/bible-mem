@@ -35,9 +35,13 @@
   "type": "module",
   "dependencies": {
     "@fontsource/geist-sans": "^5.0.3",
+    "bits-ui": "^0.21.13",
     "clsx": "^2.1.1",
+    "formsnap": "^1.0.1",
     "pocketbase": "^0.21.5",
+    "sveltekit-superforms": "^2.17.0",
     "tailwind-merge": "^2.5.2",
-    "tailwind-variants": "^0.2.1"
+    "tailwind-variants": "^0.2.1",
+    "zod": "^3.23.8"
   }
 }
