@@ -4,7 +4,7 @@
 
     import * as Form from '$lib/components/ui/form';
     import { Input } from '$lib/components/ui/input';
-    import { signInSchema, type SignInSchema } from './sign-in-schema';
+    import { signInSchema, type SignInSchema } from './sign-up-schema';
 
     export let data: SuperValidated<Infer<SignInSchema>>;
 
@@ -21,6 +21,14 @@
             <Form.Label>Username</Form.Label>
             <Input {...attrs} bind:value={$formData.username} />
         </Form.Control>
+        <Form.Description>This is your public display name.</Form.Description>
+        <Form.FieldErrors />
+    </Form.Field>
+    <Form.Field {form} name="email">
+        <Form.Control let:attrs>
+            <Form.Label>Email</Form.Label>
+            <Input {...attrs} bind:value={$formData.email} />
+        </Form.Control>
         <Form.FieldErrors />
     </Form.Field>
     <Form.Field {form} name="password">
@@ -28,6 +36,15 @@
             <Form.Label>Password</Form.Label>
             <Input {...attrs} bind:value={$formData.password} />
         </Form.Control>
+        <Form.Description>8 character minimum.</Form.Description>
+        <Form.FieldErrors />
+    </Form.Field>
+    <Form.Field {form} name="passwordConfirm">
+        <Form.Control let:attrs>
+            <Form.Label>Confirm Password</Form.Label>
+            <Input {...attrs} bind:value={$formData.passwordConfirm} />
+        </Form.Control>
+        <Form.Description>8 character minimum.</Form.Description>
         <Form.FieldErrors />
     </Form.Field>
     <Form.Button>Submit</Form.Button>

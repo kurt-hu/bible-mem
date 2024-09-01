@@ -1,10 +1,40 @@
 <script>
-    import Header from './Header.svelte';
     import '../app.css';
+
+    export let data;
 </script>
 
 <div class="app">
-    <Header></Header>
+    <header>
+        <div>
+            <nav class="container mx-auto px-6 py-8 md:flex md:items-center md:justify-between">
+                <div class="flex items-center justify-between">
+                    <a
+                        class="text-xl font-bold text-gray-800 hover:text-blue-400 md:text-2xl"
+                        href="/"
+                        >BibleMem
+                    </a>
+                </div>
+
+                <div
+                    class="mt-8 flex-col space-y-4 md:mt-0 md:flex md:flex-row md:items-center md:space-x-10 md:space-y-0"
+                >
+                    <a class="text-gray-800 hover:text-blue-400" href="/">Home</a>
+                    <a class="text-gray-800 hover:text-blue-400" href="/about">About Us</a>
+                    {#if data?.user}
+                        <form action="/sign-out" method="POST">
+                            <button class="text-gray-800 hover:text-blue-400" type="submit">
+                                Sign Out
+                            </button>
+                        </form>
+                    {:else}
+                        <a class="text-gray-800 hover:text-blue-400" href="/sign-in">Sign In</a>
+                        <a class="text-gray-800 hover:text-blue-400" href="/sign-up">Sign Up</a>
+                    {/if}
+                </div>
+            </nav>
+        </div>
+    </header>
 
     <main>
         <slot></slot>
@@ -15,7 +45,7 @@
             This project is open source! Visit our <a
                 href="https://github.com/kurt-hu/bible-mem"
                 target="_blank">GitHub repo</a
-            >
+            >🛠️
         </p>
     </footer>
 </div>

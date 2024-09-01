@@ -3,7 +3,7 @@ import { superValidate } from 'sveltekit-superforms';
 import { zod } from 'sveltekit-superforms/adapters';
 
 import type { Actions, PageServerLoad } from './$types.js';
-import { signInSchema } from './sign-in-schema.js';
+import { signInSchema } from './sign-up-schema.js';
 
 export const load: PageServerLoad = async () => {
     return {
@@ -20,15 +20,13 @@ export const actions: Actions = {
             });
         }
 
-        const { username, password } = form.data;
-
         try {
-            await event.locals.pb.collection('users').authWithPassword(username, password);
+            const newUser = await event.locals.pb.users.create(form.data);
+            await event.locals.pb.users.authWithPassword(newUser.username, form.data.password);
         } catch (error: any) {
             console.error('Error:', error.originalError);
             return fail(400, {
                 form,
-                error: 'Invalid username or password',
             });
         }
 

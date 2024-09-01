@@ -44,3 +44,5 @@ The following documentation may be helpful:
 -   https://kit.svelte.dev/docs/
 -   https://www.shadcn-svelte.com/
 -   https://tailwindcss.com/docs/
+-   https://pocketbase.io/docs/
+-   https://github.com/pocketbase/js-sdk

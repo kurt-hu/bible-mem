@@ -1,3 +1,4 @@
 {
-  "cSpell.words": ["superforms", "tailwindcss"]
+  "cSpell.words": ["ianvs", "Pocketbase", "superforms", "tailwindcss"],
+  "workbench.editor.labelFormat": "short"
 }

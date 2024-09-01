@@ -12,6 +12,7 @@
   },
   "devDependencies": {
     "@fontsource/fira-mono": "^4.5.10",
+    "@ianvs/prettier-plugin-sort-imports": "^4.3.1",
     "@neoconfetti/svelte": "^1.0.0",
     "@sveltejs/adapter-auto": "^3.0.0",
     "@sveltejs/adapter-cloudflare": "^4.7.2",
