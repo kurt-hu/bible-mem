@@ -4,6 +4,7 @@
 
     import * as Form from '$lib/components/ui/form';
     import { Input } from '$lib/components/ui/input';
+    import { PasswordInput } from '$lib/components/ui/password-input';
     import { signInSchema, type SignInSchema } from './sign-in-schema';
 
     export let data: SuperValidated<Infer<SignInSchema>>;
@@ -26,9 +27,9 @@
     <Form.Field {form} name="password">
         <Form.Control let:attrs>
             <Form.Label>Password</Form.Label>
-            <Input {...attrs} bind:value={$formData.password} />
+            <PasswordInput {...attrs} bind:value={$formData.password} />
         </Form.Control>
         <Form.FieldErrors />
     </Form.Field>
-    <Form.Button>Submit</Form.Button>
+    <Form.Button class="mt-2">Submit</Form.Button>
 </form>
