@@ -1,1 +1,5 @@
 /pb_data
+bible_data/*.db
+bible_data/*.sql
+node_modules
+*.env
