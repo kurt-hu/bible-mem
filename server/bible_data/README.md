@@ -38,6 +38,10 @@ node import_json.js
 - https://github.com/pocketbase/pocketbase/discussions/2088
 - https://github.com/pocketbase/pocketbase/discussions/2014
 - https://github.com/pocketbase/pocketbase/discussions/1692
+- https://get.bible/blog/post/how-to-access-the-bible-via-api-or-download-the-bible-as-data
+- https://api.esv.org/
+- https://docs.api.bible/guides/bibles
+- https://bolls.life/api/
 
 # Old (Can't directly add tables because PocketBase needs associated metadata, required table fields)
 
