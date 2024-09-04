@@ -4,9 +4,12 @@
 
     import * as Form from '$lib/components/ui/form';
     import { Input } from '$lib/components/ui/input';
+    import { PasswordInput } from '$lib/components/ui/password-input';
+    import type { ActionData } from './$types';
     import { signInSchema, type SignInSchema } from './sign-up-schema';
 
     export let data: SuperValidated<Infer<SignInSchema>>;
+    export let actionData: ActionData;
 
     const form = superForm(data, {
         validators: zodClient(signInSchema),
@@ -21,7 +24,7 @@
             <Form.Label>Username</Form.Label>
             <Input {...attrs} bind:value={$formData.username} />
         </Form.Control>
-        <Form.Description>This is your public display name.</Form.Description>
+        <Form.Description>This will be your public display name.</Form.Description>
         <Form.FieldErrors />
     </Form.Field>
     <Form.Field {form} name="email">
@@ -34,18 +37,22 @@
     <Form.Field {form} name="password">
         <Form.Control let:attrs>
             <Form.Label>Password</Form.Label>
-            <Input {...attrs} bind:value={$formData.password} />
+            <PasswordInput {...attrs} bind:value={$formData.password} />
         </Form.Control>
-        <Form.Description>8 character minimum.</Form.Description>
         <Form.FieldErrors />
     </Form.Field>
     <Form.Field {form} name="passwordConfirm">
         <Form.Control let:attrs>
             <Form.Label>Confirm Password</Form.Label>
-            <Input {...attrs} bind:value={$formData.passwordConfirm} />
+            <PasswordInput {...attrs} bind:value={$formData.passwordConfirm} />
         </Form.Control>
-        <Form.Description>8 character minimum.</Form.Description>
         <Form.FieldErrors />
     </Form.Field>
-    <Form.Button>Submit</Form.Button>
+    {#if actionData?.error}
+        <p>
+            <!-- TODO: Write helper function to render ClientResponseError (https://github.com/pocketbase/js-sdk#error-handling) -->
+            {`${actionData.error?.message} ${actionData.error?.data ? JSON.stringify(actionData.error?.data) : ''}`}
+        </p>
+    {/if}
+    <Form.Button class="mt-2">Submit</Form.Button>
 </form>
