@@ -16,12 +16,14 @@ export const handle: Handle = async ({ event, resolve }) => {
 
         // Just for convenience to shorten path to user model
         event.locals.user = event.locals.pb.authStore.model;
+        console.log('event.locals.user:', event.locals.user);
     } catch (_) {
         // clear the auth store on failed refresh
         event.locals.pb.authStore.clear();
     }
 
     const response = await resolve(event);
+    console.log('process.env.NODE_ENV:', process.env.NODE_ENV);
 
     // send back the default 'pb_auth' cookie to the client with the latest store state
     response.headers.set(
