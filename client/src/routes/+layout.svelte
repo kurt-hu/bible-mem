@@ -22,6 +22,8 @@
                     <a class="text-gray-800 hover:text-blue-400" href="/">Home</a>
                     <a class="text-gray-800 hover:text-blue-400" href="/about">About Us</a>
                     {#if data?.user}
+                        <a class="text-gray-800 hover:text-blue-400" href="/decks">Decks</a>
+                        <a class="text-gray-800 hover:text-blue-400" href="/settings">Settings</a>
                         <form action="/sign-out" method="POST">
                             <button class="text-gray-800 hover:text-blue-400" type="submit">
                                 Sign Out
