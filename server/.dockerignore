@@ -1,0 +1,12 @@
+# flyctl launch added from .gitignore
+pb_data
+bible_data
+**\node_modules
+
+# Env
+**\.env
+**\.env.*
+!**\.env.example
+!**\.env.test
+fly.toml
+**\.md

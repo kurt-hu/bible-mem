@@ -15,3 +15,6 @@ Once Go is installed, run `go run main.go serve`, which will start the server an
 - https://github.com/open-spaced-repetition/fsrs4anki/wiki/The-Algorithm
 - https://github.com/open-spaced-repetition/go-fsrs
   - https://github.com/open-spaced-repetition/go-fsrs/blob/main/models.go
+- https://github.com/arrowban/sveltekit-pocketbase-turborepo-template/tree/main?tab=readme-ov-file#production-deployments
+- https://fly.io/docs/launch/continuous-deployment-with-github-actions/
+- https://github.com/pocketbase/pocketbase/discussions/537
